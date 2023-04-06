@@ -46,7 +46,7 @@
       {
         "src": "/pwa-native/assets/images/icons/icon-60x60.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "60x60"
       }
     ],
     "start_url": "/pwa-native/",
