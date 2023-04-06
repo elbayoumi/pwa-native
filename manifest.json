@@ -45,7 +45,7 @@
       }
     ],
     "start_url": "/pwa-native/",
-    "background_color": "#ffffff",
+    "background_color": "#8581d8",
     "display": "standalone",
     "theme_color": "#f48fb1"
   }
