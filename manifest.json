@@ -1,6 +1,6 @@
 {
-    "name": "Soft Pinko",
-    "short_name": "Pinko",
+    "name": "pwa",
+    "short_name": "pwa",
     "description": "A demo Progressive Web App",
     "icons": [
       {
