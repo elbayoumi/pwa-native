@@ -130,5 +130,32 @@
 		});
 	}
 
-
+	const sign_in_page =document.getElementById("sign_in_page")
+	const sign_in_click = window.document.getElementById("sign_in_click")
+	const ofwite=document.querySelector(".ofwite")
+	ofwite.addEventListener('click', function() {
+		sign_in_page.style.display= 'none';
+		ofwite.style.display= 'none';
+		document.querySelector("html").style.overflow='scroll'
+	
+	})
+	document.getElementById("none").addEventListener('click', ()=>{
+		sign_in_page.style.display= 'none';
+		ofwite.style.display= 'none';
+		document.querySelector("html").style.overflow='scroll'
+	
+	})
+	sign_in_click.addEventListener('click', ()=>{
+		if (sign_in_page.style.display== 'none'){
+			sign_in_page.style.display= 'block'
+			ofwite.style.display= 'block';
+			document.querySelector("html").style.overflow='hidden'
+			// document.body.style.backgroundColor='#000';
+		}else{
+			sign_in_page.style.display= 'none'
+			ofwite.style.display= 'none';
+			document.querySelector("html").style.overflow='scroll'
+		}
+	})
+	
 })(window.jQuery);
