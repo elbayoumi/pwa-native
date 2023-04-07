@@ -4,7 +4,7 @@ const urlsToCache = [
   'index.html',
   'assets/css/templatemo-softy-pinko.css',
   'assets/css/bootstrap.min.css',
-  "assets/js/bootstrap.min.js",
+  'assets/js/bootstrap.min.js',
   'assets/js/popper.js',
   
 
