@@ -36,7 +36,8 @@
     {
       "src": "/pwa-native/assets/images/icons/72x72.ico",
       "type": "image/png",
-      "sizes": "72x72"
+      "sizes": "72x72",
+      "purpose": "any maskable"
     },
     {
       "src": "/pwa-native/assets/images/icons/96x96.ico",
