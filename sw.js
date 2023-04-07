@@ -81,28 +81,47 @@ self.addEventListener('activate', event => {
 });
 
 // Fetch Event Listener
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
+// self.addEventListener('fetch', event => {
+//   event.respondWith(
+//     caches.match(event.request)
+//       .then(response => {
+//         if (response) {
+//           return response;
+//         }
 
-        return fetch(event.request)
-          .then(response => {
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
+//         return fetch(event.request)
+//           .then(response => {
+//             if (!response || response.status !== 200 || response.type !== 'basic') {
+//               return response;
+//             }
+
+//             const responseToCache = response.clone();
+//             caches.open(CACHE_NAME)
+//               .then(cache => {
+//                 cache.put(event.request, responseToCache);
+//               });
+
+//             return response;
+//           });
+//       })
+//   );
+// });
+/////////////////////////////
+self.addEventListener('fetch', function(event) {
+  // Only cache requests with the http and https schemes
+  if (event.request.url.startsWith('http://') || event.request.url.startsWith('https://')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.match(event.request).then(function(response) {
+          return response || fetch(event.request).then(function(response) {
+            // Cache the response if it's a successful GET request
+            if (event.request.method === 'GET' && response.status === 200) {
+              cache.put(event.request, response.clone());
             }
-
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-
             return response;
           });
+        });
       })
-  );
+    );
+  }
 });
