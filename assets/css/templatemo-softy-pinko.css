@@ -1592,7 +1592,7 @@ preloader
     position: fixed;
     margin: auto;
     padding: 2rem;
-  top: 120px;
+  top: 60px;
   left: 0px;
   right: 0px;
   z-index: 102;
@@ -1610,6 +1610,8 @@ preloader
 } */
 @media only screen and (max-width: 600px)  {
   #sign_in_page{
+    top: 20px;
+
     width:90%; 
 
   }
